@@ -25,6 +25,46 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        combo_escape {
+            bindings = <&kp ESCAPE>;
+            key-positions = <27 28 31 32>;
+            layers = <0>;
+        };
+    };
+
+    macros {
+        rbg_purple: rbg_purple {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(267,100,50)>;
+            label = "RBG_PURPLE";
+        };
+
+        rbg_red: rbg_red {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(0,100,50)>;
+            label = "RBG_RED";
+        };
+
+        rbg_green: rbg_green {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(128,100,50)>;
+            label = "RBG_GREEN";
+        };
+
+        rbg_pink: rbg_pink {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(295,100,50)>;
+            label = "RBG_PINK";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -39,7 +79,7 @@
 &kp SQT           &kp Q                &kp W                &kp E                  &kp R             &kp T        &kp Y    &kp U             &kp I                   &kp O                 &kp P                         &kp GRAVE
 &kp LEFT_BRACKET  &ht_home LEFT_GUI A  &ht_home LEFT_ALT S  &ht_home LEFT_SHIFT D  &ht_home LCTRL F  &kp G        &kp H    &ht_home RCTRL J  &ht_home RIGHT_SHIFT K  &ht_home RIGHT_ALT L  &ht_home RIGHT_GUI SEMICOLON  &kp RIGHT_BRACKET
 &kp BACKSLASH     &kp Z                &kp X                &kp C                  &kp V             &kp B        &kp N    &kp M             &kp COMMA               &kp DOT               &kp AT_SIGN                   &kp SLASH
-                                                            &kp TAB                &mo 1             &kp SPACE    &kp RET  &mo 2             &kp BACKSPACE
+                                                            &mo 1                  &kp TAB           &kp SPACE    &kp RET  &kp BACKSPACE     &mo 2
             >;
         };
 
@@ -51,9 +91,9 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp ESCAPE  &trans  &trans    &kp UP    &trans     &trans       &trans   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans        &kp BSPC
-&trans      &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans       &trans   &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &trans        &trans
-&trans      &trans  &trans    &trans    &trans     &trans       &trans   &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &trans
+&kp ESCAPE  &trans  &trans    &kp UP    &trans     &trans       &trans   &kp NUMBER_7  &kp NUMBER_8  &kp N9        &trans        &kp BSPC
+&trans      &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans       &trans   &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp NUMBER_0  &trans
+&trans      &trans  &trans    &trans    &trans     &trans       &trans   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans        &trans
                               &trans    &trans     &kp SPACE    &kp RET  &trans        &trans
             >;
         };
@@ -75,9 +115,9 @@
 
         both_layer {
             bindings = <
-&trans      &trans        &trans        &trans        &trans        &trans          &trans  &trans           &trans           &rgb_ug RGB_EFF                    &rgb_ug RGB_EFR                    &trans
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &rgb_ug RGB_COLOR_HSB(264,100,50)  &rgb_ug RGB_COLOR_HSB(0,100,50)    &rgb_ug RGB_TOG
-&trans      &trans        &trans        &trans        &trans        &trans          &trans  &trans           &trans           &rgb_ug RGB_COLOR_HSB(119,100,49)  &rgb_ug RGB_COLOR_HSB(301,100,50)  &trans
+&trans      &trans        &trans        &trans        &trans        &trans          &trans  &trans           &trans           &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &trans
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &rbg_purple      &rbg_red         &rgb_ug RGB_TOG
+&trans      &trans        &trans        &trans        &trans        &trans          &trans  &trans           &trans           &rbg_green       &rbg_pink        &trans
                                         &trans        &trans        &trans          &trans  &trans           &trans
             >;
         };
