@@ -87,7 +87,7 @@
             bindings = <
 &kp SQT           &kp Q                &kp W                &kp E                  &kp R             &kp T        &kp Y    &kp U             &kp I                   &kp O                 &kp P                         &kp GRAVE
 &kp LEFT_BRACKET  &ht_home LEFT_GUI A  &ht_home LEFT_ALT S  &ht_home LEFT_SHIFT D  &ht_home LCTRL F  &kp G        &kp H    &ht_home RCTRL J  &ht_home RIGHT_SHIFT K  &ht_home RIGHT_ALT L  &ht_home RIGHT_GUI SEMICOLON  &kp RIGHT_BRACKET
-&kp BACKSLASH     &kp Z                &kp X                &kp C                  &kp V             &kp B        &kp N    &kp M             &kp COMMA               &kp DOT               &kp AT_SIGN                   &kp SLASH
+&kp BACKSLASH     &kp Z                &kp X                &kp C                  &kp V             &kp B        &kp N    &kp M             &kp COMMA               &kp DOT               &kp DOUBLE_QUOTES             &kp SLASH
                                                             &mo 1                  &kp TAB           &kp SPACE    &kp RET  &kp BACKSPACE     &mo 2
             >;
         };
